@@ -72,7 +72,7 @@ int main(){
     return 0;
   }
   
-	for(int i = 0; i < 6; i++){
+	for(int i = 0; i < 7; i++){
     cout << NC "\nDigite uma palavra com "<< tam_palavra <<" letras: ";
     getline(cin, palavra_player);
     palavra_player = capitalizeString(palavra_player);
@@ -90,10 +90,13 @@ int main(){
         cout << RED << palavra_player[j];
       }
     }
-    if(palavra_mister == palavra_player){
+
+    size_t found2 = palavra_player.find(palavra_mister);
+    if (found2 != string::npos){
       cout << NC "\nPARABÉNS VOCÊ ACERTOU A PALAVRA: " <<palavra_mister<< endl;
       return 0;
     }
+    
   }
   cout << NC "\nA PALAVRA ERA: " << palavra_mister << endl;
 }
