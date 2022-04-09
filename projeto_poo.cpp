@@ -73,7 +73,7 @@ int main(){
   }
   
 	for(int i = 0; i < 7; i++){
-    cout << NC "\nDigite uma palavra com "<< tam_palavra <<" letras: ";
+    cout << NC "\nDigite uma palavra com tantas "<< tam_palavra <<" letras: ";
     getline(cin, palavra_player);
     palavra_player = capitalizeString(palavra_player);
 
