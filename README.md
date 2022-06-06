@@ -5,6 +5,7 @@ Este é um repositório criado para armazenar o meu trabalho da disciplina de Pr
 Wordle é um jogo de palavras em que os jogadores tentam adivinhar uma palavra de cinco letras em seis tentativas. O jogo retorna um feedback, na forma de letras coloridas, é dado para cada palpite, informando aos jogadores quais letras estão na posição correta e quais estão em outras posições da palavra-resposta.
 
 ## Referências Utilizadas no Projeto
+* [Biblioteca String (UFSJ)](https://ufsj.edu.br/portal-repositorio/File/prof_ngoulart/notas_aula/AEDS1/string_Cpp.pdf)
 * [Programar em C++/Manipulando strings (PUC-RS)](https://www.inf.pucrs.br/~flash/lapro2ec/aulas/aula_strings.html)
 * [Namespaces e Strings em C++ (Wikilivros)](https://pt.wikibooks.org/wiki/Programar_em_C%2B%2B/Manipulando_strings)
 * [Array de Strings em C++, 5 formas de criar (GeeksforGeeks)](https://www.geeksforgeeks.org/array-strings-c-3-different-ways-create/)

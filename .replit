@@ -1,2 +1,2 @@
 language = "cpp"
-run = "g++ -o projeto projeto_poo.cpp; ./projeto"
+run = "g++ -o projeto projeto_poo.cpp classes.cpp; ./projeto"
