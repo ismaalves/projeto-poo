@@ -35,11 +35,10 @@ class Jogador{
                 }  
             }
             catch (std::overflow_error& e) {
-                //std::cout << "exception capturada::" << e.what() << '\n';
                 this->nome = padrao;
             }
-            
         }
+
         std::string getNome(){
             return this->nome;
         }
@@ -83,6 +82,7 @@ class Palavra{
         void setPalavra(std::string palavra){
             this->palavra = capitalizeString(palavra);
         }
+
         std::string getPalavra(){
             return palavra;
         }
@@ -102,6 +102,7 @@ class PalavraSort: public Palavra{
                 this->tamanho = 5;
             }
         }
+
         int getTamanho(){
             return this->tamanho;
         }
@@ -118,28 +119,35 @@ class PalavraSort: public Palavra{
         }
         
         std::string sorteiaPalavra(int tam){
-            std::string arq;
+            std::string nome_arq;
             std::string sort;
             int pos = aleatorio();
             if(tam == 5){
-                arq = "letras5.txt";
+                nome_arq = "letras5.txt";
             }
             else if(tam == 6){
-                arq = "letras6.txt";
+                nome_arq = "letras6.txt";
             }
             else if(tam == 7){
-                arq = "letras6.txt";
+                nome_arq = "letras6.txt";
             }
             else{
                 std::cout << "Fora dos limites. Tamanho definido como 5" << std::endl;
-                arq = "letras5.txt";
+                nome_arq = "letras5.txt";
             }
-            std::ifstream objarq = std::ifstream(arq,std::ios::in);
-            objarq.seekg(((tam+1)*pos));
-            char ch;
-            for(int i = 0; i < tam; i++){
-                objarq.get(ch);
-                sort = sort+ch;
+            std::ifstream objarq;
+            objarq.exceptions(std::ifstream::badbit);
+            try{
+                objarq.open(nome_arq);
+                objarq.seekg(((tam+1)*pos));
+                char ch;
+                for(int i = 0; i < tam; i++){
+                    objarq.get(ch);
+                    sort = sort+ch;
+                }
+            }
+            catch(const std::ifstream::failure& e){
+                std::cout << "Erro ao abrir/ler o arquivo" << std::endl;
             }
             objarq.close();
             return sort;
